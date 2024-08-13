@@ -6,7 +6,8 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
+const bucketRoutes = require('./routes/bucketList');
+app.use('/api/bucketlist', bucketRoutes);
 
 // MongoDB connection
 mongoose.connect('mongodb://127.0.0.1:27017/bucketlist')
